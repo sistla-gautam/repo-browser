@@ -21,7 +21,7 @@ function App() {
         alert("Incorrect password. Please refresh and try again.");
       }
     }
-  }, [authenticated]);
+  }, [authenticated, correctPassword]);
 
   useEffect(() => {
     if (authenticated) {
