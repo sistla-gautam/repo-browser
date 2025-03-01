@@ -270,29 +270,20 @@ const GitHubBrowser = () => {
     const parts = currentPath ? currentPath.split("/") : [];
     return (
       <div className="breadcrumb">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            fetchContents("");
-          }}
-        >
+        <button onClick={() => fetchContents("")} className="breadcrumb-link">
           root
-        </a>
+        </button>
         {parts.map((part, index) => {
           const path = parts.slice(0, index + 1).join("/");
           return (
             <span key={path}>
               {" / "}
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  fetchContents(path);
-                }}
+              <button
+                onClick={() => fetchContents(path)}
+                className="breadcrumb-link"
               >
                 {part}
-              </a>
+              </button>
             </span>
           );
         })}
@@ -308,19 +299,18 @@ const GitHubBrowser = () => {
       <ul>
         {currentPath && (
           <li>
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
+            <button
+              onClick={() => {
                 const parentPath = currentPath
                   .split("/")
                   .slice(0, -1)
                   .join("/");
                 fetchContents(parentPath);
               }}
+              className="breadcrumb-link"
             >
               ..
-            </a>
+            </button>
           </li>
         )}
         {contents
@@ -330,19 +320,18 @@ const GitHubBrowser = () => {
           })
           .map((item) => (
             <li key={item.path}>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
+              <button
+                onClick={() => {
                   item.type === "dir"
                     ? fetchContents(item.path)
                     : viewFile(item.path);
                 }}
+                className="file-link"
               >
                 {item.type === "dir" ? "📁 " : "📄 "}
                 {item.name}
                 {item.type === "dir" ? "/" : ""}
-              </a>
+              </button>
             </li>
           ))}
       </ul>
