@@ -341,7 +341,7 @@ const GitHubBrowser = () => {
   return (
     <div className="container">
       <div className="header">
-        <h1>GitHub Repository Browser</h1>
+        <h1>Second Brain</h1>
         <button
           className="theme-toggle"
           onClick={() => setIsDarkTheme(!isDarkTheme)}

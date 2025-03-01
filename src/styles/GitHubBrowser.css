@@ -290,3 +290,56 @@ pre {
 .auth-button:hover {
   background: var(--accent);
 }
+
+/* General button styling */
+button {
+  all: unset; /* Removes default styles */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* File and folder buttons */
+.file-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: var(--surface0);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  margin: 4px 0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.file-link:hover {
+  background: var(--surface1);
+  color: var(--accent);
+}
+
+.file-link:active {
+  background: var(--surface2);
+}
+
+/* Breadcrumb button */
+.breadcrumb-link {
+  background: var(--header-bg);
+  color: var(--link-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.breadcrumb-link:hover {
+  background: var(--surface0);
+  color: var(--accent);
+}
+
+.breadcrumb-link:active {
+  background: var(--surface1);
+}
